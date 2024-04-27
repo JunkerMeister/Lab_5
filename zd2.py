@@ -1,8 +1,7 @@
-arr = list(map(int, input('Введите последовательность чисел от 1 до N, где одно из чисел удалили. Оставшиеся числа перемешали в случайном порядке.\n Я найду удаленное число: ').split()))
-a = sorted(arr)
-for i in range(len(a)+1):
-    if a[i+1] - a[i] != 1:
-        break
-    else:
-        i += 1
-print("Пропущено число:", a[i] + 1)
+from random import randint
+arr = ([randint(0, 1001) for x in range(10)])
+s_arr = sorted(arr)
+n = randint(0, 9)
+Delarr = (arr[0:n]+arr[n+1:])
+ans = sum(arr) - sum(Delarr)
+print(f'Начальный массив: {s_arr} \n Полученный массив: {Delarr} \n Удаленное число: {ans}')
