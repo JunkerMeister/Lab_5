@@ -1,7 +1,13 @@
 from random import randint
-arr = ([randint(0, 1001) for x in range(10)])
-s_arr = sorted(arr)
-n = randint(0, 9)
-Delarr = (arr[0:n]+arr[n+1:])
-ans = sum(arr) - sum(Delarr)
-print(f'Начальный массив: {s_arr} \n Полученный массив: {Delarr} \n Удаленное число: {ans}')
+def rand_list(a, f):
+    arr = a
+    Delarr = f
+    return sum(arr) - sum(Delarr)
+
+if __name__ == '__main__':
+    a = ([randint(0, 1001) for x in range(10)])
+    b = sorted(a)
+    n = randint(0, 9)
+    f = (a[0:n] + a[n + 1:])
+    c = rand_list(a, f)
+    print(f'Начальный массив: {b} \n Полученный массив: {f} \n Удаленное число: {c}')
