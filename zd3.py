@@ -12,5 +12,8 @@ def roman_to_arabic(s):
         prev_value = current_value
 
     return arabic_number
-n = input('Enter roman num("example: II or XV"): ')
-print(roman_to_arabic(n))
+
+
+if __name__ == '__main__':
+    n = input('Enter roman num("example: II or XV"): ')
+    print(roman_to_arabic(n))
